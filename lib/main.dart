@@ -71,10 +71,11 @@ class _MyAppState extends State<MyApp> {
       _speech.listen(
         onResult: (val) => setState(() {
           // Append the recognized words only if the result is final.
-          if (val.recognizedWords.isNotEmpty && val.finalResult) {
+          /* if (val.recognizedWords.isNotEmpty && val.finalResult) {
             _text += " " +
                 val.recognizedWords; // Append the new words to the existing text.
-          }
+          }*/
+          _text += " " + val.recognizedWords;
         }),
         listenFor: const Duration(seconds: 30),
         partialResults: true,
